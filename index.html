@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle" />
+      <span class="slider round"></span>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+
+  <main class="container">
+    <h1 class="title">🎯 Quiz Game</h1>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="start">
+      <input type="text" id="username" placeholder="Enter your name" />
+      <select id="category">
+        <option value="general">General Knowledge</option>
+        <option value="science">Science</option>
+        <option value="coding">Coding</option>
+      </select>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Area -->
+    <div id="quiz" class="quiz hidden">
+      <div class="quiz-header">
+        <div><strong>Player:</strong> <span id="player-name"></span></div>
+        <div id="question-number"></div>
+        <div>⏱ Time left: <span id="time">600</span>s</div>
+      </div>
+      <h2 id="question">Question text</h2>
+      <ul id="choices" class="choices"></ul>
+      <button id="next-btn" class="hidden">Next</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result" class="result hidden">
+      <h2>🎉 Quiz Completed!</h2>
+      <p>Your score: <span id="score"></span></p>
+      <h3>🏆 Leaderboard (Top 5)</h3>
+      <ul id="leaderboard"></ul>
+      <button onclick="location.reload()">Restart</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
